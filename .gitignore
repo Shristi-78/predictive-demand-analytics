@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+venv/
+
+# Jupyter Notebook checkpoints
+.notebooks/.ipynb_checkpoints
+.ipynb_checkpoints
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+.streamlit/
+
+# Data files (optional, uncomment if you want to ignore all CSVs in data/)
+# data/*.csv
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/ 
