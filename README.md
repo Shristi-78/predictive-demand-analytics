@@ -1,19 +1,20 @@
-# Predictive Demand Analytics for Metals (Hybrid Prophet + XGBoost)
+# Predictive Demand Analytics for Metals (Prophet Future-Only Dashboard)
 
 ## Overview
-This project provides a scalable, production-ready dashboard for forecasting and comparing the future prices of multiple key metals (lithium, copper, nickel, aluminum, cobalt) using a hybrid Prophet + XGBoost approach. It is designed for easy integration into larger analytics or business intelligence products.
+This project provides a scalable, production-ready dashboard for forecasting and comparing the **future prices** of multiple key metals (lithium, copper, nickel, aluminum, cobalt) using Prophet. The dashboard is now focused on displaying **only future predictions** (next 6 months) for each metal—no actuals, no test set, no overlap. It is designed for easy integration into larger analytics or business intelligence products.
 
 ## Features
-- **Hybrid Prophet + XGBoost modeling** for robust time series forecasting
+- **Prophet modeling** for robust time series forecasting
 - **Multi-metal support**: lithium, copper, nickel, aluminum, cobalt (easily extendable)
 - **Interactive Streamlit dashboard**
 - **Comparison and highlighting** of the most valuable metal in the future
 - **Synthetic data generation** (no real data required, but can be adapted)
+- **Future-focused**: Only the next 6 months of predicted prices are displayed—in both the chart and the table. No actuals or historical predictions are shown.
 
 ## Quick Start
 
 ### 1. Python Version & Virtual Environment
-- **Recommended Python version:** 3.11 (TensorFlow and Prophet do NOT support Python 3.12+ as of mid-2024)
+- **Recommended Python version:** 3.11 (Prophet does NOT support Python 3.12+ as of mid-2024)
 - **Set up a virtual environment** (recommended):
 
 ```bash
@@ -35,7 +36,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-If you see errors about `prophet` or `tensorflow`, double-check you are using Python 3.11.
+If you see errors about `prophet`, double-check you are using Python 3.11.
 
 ### 3. Run the Dashboard
 
@@ -44,7 +45,7 @@ streamlit run src/dashboard.py
 ```
 
 - The dashboard will open in your browser (usually at http://localhost:8501).
-- You can compare metals, see future price forecasts, and highlight the most valuable one.
+- You can compare metals, see future price forecasts (next 6 months), and highlight the most valuable one.
 
 ## Project Structure
 ```
@@ -58,7 +59,7 @@ predictive_demand_analytics/
 ```
 
 ## Troubleshooting
-- **Prophet or TensorFlow install errors:**
+- **Prophet install errors:**
   - Ensure you are using Python 3.11 (not 3.12+).
   - On Windows, you may need to install build tools for Prophet. See [Prophet install docs](https://facebook.github.io/prophet/docs/installation.html).
 - **Plotly warning:**
